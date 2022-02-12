@@ -2,20 +2,49 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Home</title>
+        <title>Testing Promise, Asynce/Await in JavaScript</title>
         <style>
             html{
-                background-color: green;
-            }
-
-            p {
-                font-size: 70px;
+                background-color:  brown;
             }
         </style>
+        <script>
+            async function start(){
+
+                let response;
+                try
+                {
+                    response = await fetch("https://www.google.com");
+                    if (response.ok)
+                    {
+                        let text = await response.text();
+                        document.getElementById("display").innerHTML = text;
+
+                        // let responseHeaders;
+                        // for (let [key, value] in response.headers)
+                        // {
+                        //     responseHeaders += `${key} = ${value}`;
+                        // }
+                        // document.getElementById("responseHeader").innerHTML = responseHeaders;
+                    }
+                    else
+                    {
+                        document.getElementById("display").innerHTML = response.status;
+                    }
+                }
+                catch(exception)
+                {
+                    document.getElementById("display").innerHTML = exception;
+                }
+                
+                
+            }
+            window.addEventListener("load", start, false);
+        </script>
     </head>
+
     <body>
-        <p>
-            Home is Home
-        </p>
+        <p id="display"></p>
+        <p id="responseHeader"></p>
     </body>
 </html>
