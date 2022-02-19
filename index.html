@@ -11,31 +11,33 @@
         <script>
             async function start(){
 
-                let response;
-                try
-                {
-                    response = await fetch("https://github.com/");
-                    if (response.ok)
-                    {
-                        let text = await response.text();
-                        document.getElementById("display").innerHTML = text;
+                document.getElementById("display").innerHTML = window.location.href;
 
-                        // let responseHeaders;
-                        // for (let [key, value] in response.headers)
-                        // {
-                        //     responseHeaders += `${key} = ${value}`;
-                        // }
-                        // document.getElementById("responseHeader").innerHTML = responseHeaders;
-                    }
-                    else
-                    {
-                        document.getElementById("display").innerHTML = response.status;
-                    }
-                }
-                catch(exception)
-                {
-                    document.getElementById("display").innerHTML = exception;
-                }
+                // let response;
+                // try
+                // {
+                //     response = await fetch("https://github.com/");
+                //     if (response.ok)
+                //     {
+                //         let text = await response.text();
+                //         document.getElementById("display").innerHTML = text;
+
+                //         // let responseHeaders;
+                //         // for (let [key, value] in response.headers)
+                //         // {
+                //         //     responseHeaders += `${key} = ${value}`;
+                //         // }
+                //         // document.getElementById("responseHeader").innerHTML = responseHeaders;
+                //     }
+                //     else
+                //     {
+                //         document.getElementById("display").innerHTML = response.status;
+                //     }
+                // }
+                // catch(exception)
+                // {
+                //     document.getElementById("display").innerHTML = exception;
+                // }
                 
                 
             }
